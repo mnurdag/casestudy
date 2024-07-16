@@ -1,4 +1,4 @@
-#ZAD case study project
+# ZAD case study project
 
 ## Prerequisites (How I tested the API):
 - Tested on a Mac (macOS Sonoma 14.4.1)
