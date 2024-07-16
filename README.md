@@ -1,11 +1,12 @@
 #ZAD case study project
 
-### Tested on a Mac (macOS Sonoma 14.4.1)
-### Docker version v4.12.0
-### Postman 9.15.13
-### Java 17
-### spring-boot-starter-parent 3.3.1
-### Maven version 3.9.8
+## Prerequisites (How I tested the API):
+- Tested on a Mac (macOS Sonoma 14.4.1)
+- Docker version v4.12.0
+- Postman 9.15.13
+- Java 17
+- spring-boot-starter-parent 3.3.1
+- Maven version 3.9.8
 
 ## Running steps:
 1- Make sure you have required software above up and running.  
