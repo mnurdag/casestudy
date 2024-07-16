@@ -1,5 +1,4 @@
-# casestudy
-ZAD case study project
+#ZAD case study project
 
 ### Tested on a Mac (macOS Sonoma 14.4.1)
 ### Docker version v4.12.0
