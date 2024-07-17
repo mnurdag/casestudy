@@ -21,3 +21,6 @@ http://localhost:8080/swagger-ui/index.html
 
 You can also access kafka ui at:  
 http://localhost:8090/ui  
+
+Note: I deliberately documented only the AccountController and CreateAccountRequest classes with swagger as an example.  
+I assumed that it would be sufficient for demonstrative purposes.
