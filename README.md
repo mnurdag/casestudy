@@ -15,3 +15,9 @@
 4- Run "docker-compose up"  
 5- Import postman collection attached at the project root, named "Zad.postman_collection".  
 and that's it. You can run requests on Postman in order, from top to the bottom. They cover all the scenarios expected by the Case Study Description email.  
+
+You can access swagger document at:  
+http://localhost:8080/swagger-ui/index.html  
+
+You can also access kafka ui at:  
+http://localhost:8090/ui  
