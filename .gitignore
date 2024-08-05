@@ -1,2 +1,4 @@
-/target/
+/account-service/target/
+/transaction-service/target/
+/user-service/target/
 /.idea/
