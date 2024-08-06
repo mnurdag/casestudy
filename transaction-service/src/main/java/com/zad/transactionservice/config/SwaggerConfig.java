@@ -11,16 +11,13 @@ import org.springframework.context.annotation.Configuration;
 public class SwaggerConfig {
 
     @Bean
-    public OpenAPI customOpenAPI() {
+    public OpenAPI transactionServiceOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Casestudy API")
+                        .title("Transaction Service API")
                         .version("1.0")
                         .description("""
-                                This API has several features.
-                                First one is that you can create seperate accounts based on different currencies.
-                                Second one ist that you can withdraw, deposit or send money from your accounts.
-                                You can also retrieve the account balance.
+                                You can start a money transaction through this API. Each transaction is recorded as history logs.
                                 """)
                         .termsOfService("http://swagger.io/terms/")
                         .license(new License()

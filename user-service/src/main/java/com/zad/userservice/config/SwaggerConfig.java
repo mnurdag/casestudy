@@ -11,13 +11,13 @@ import org.springframework.context.annotation.Configuration;
 public class SwaggerConfig {
 
     @Bean
-    public OpenAPI userServiceAPI() {
+    public OpenAPI userServiceOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
                         .title("User Service API")
                         .version("1.0")
                         .description("""
-                                You can create new users.
+                                You can create new users and retrieve user information.
                                 """)
                         .termsOfService("http://swagger.io/terms/")
                         .license(new License()

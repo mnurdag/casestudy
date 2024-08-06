@@ -10,14 +10,20 @@
 
 ## Running steps:
 1- Make sure you have required software above up and running.  
-2- Open terminal and navigate to the project root folder.  
-3- Run "mvn package -Dmaven.test.skip" to create the jar.  
-4- Run "docker-compose up"  
-5- Import postman collection attached at the project root, named "Zad.postman_collection".  
+2- Open terminal and navigate to the account service project root folder.  
+3- Run "mvn package -Dmaven.test.skip=true" to create the jar.
+4- Open terminal and navigate to the transaction service project root folder.  
+5- Run "mvn package -Dmaven.test.skip=true" to create the jar.
+6- Open terminal and navigate to the user service project root folder.  
+7- Run "mvn package -Dmaven.test.skip=true" to create the jar.
+8- Run "docker-compose up"  
+9- Import postman collection attached at the project root, named "Zad.postman_collection".  
 and that's it. You can run requests on Postman in order, from top to the bottom. They cover all the scenarios expected by the Case Study Description email.  
 
-You can access swagger document at:  
-http://localhost:8080/swagger-ui/index.html  
+You can access swagger documents at: 
+http://localhost:8081/swagger-ui/index.html -> Account Service API 
+http://localhost:8082/swagger-ui/index.html -> Transaction Service API 
+http://localhost:8083/swagger-ui/index.html -> User Service API
 
 You can also access kafka ui at:  
 http://localhost:8090/ui  

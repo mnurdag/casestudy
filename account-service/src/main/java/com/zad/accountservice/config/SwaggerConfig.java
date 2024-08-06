@@ -11,10 +11,10 @@ import org.springframework.context.annotation.Configuration;
 public class SwaggerConfig {
 
     @Bean
-    public OpenAPI customOpenAPI() {
+    public OpenAPI accountServiceOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Casestudy API")
+                        .title("Account Service API")
                         .version("1.0")
                         .description("""
                                 This API has several features.
