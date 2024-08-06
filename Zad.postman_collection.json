@@ -11,18 +11,18 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/user?userName=jacksparrow&name=jack&surname=sparrow&age=32",
+					"raw": "http://localhost:8083/user?username=jacksparrow&name=jack&surname=sparrow&age=32",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8083",
 					"path": [
 						"user"
 					],
 					"query": [
 						{
-							"key": "userName",
+							"key": "username",
 							"value": "jacksparrow"
 						},
 						{
@@ -48,18 +48,18 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/account?userName=jacksparrow&currencyCode=USD&initialBalance=1",
+					"raw": "http://localhost:8081/account?username=jacksparrow&currencyCode=USD&balance=10",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"account"
 					],
 					"query": [
 						{
-							"key": "userName",
+							"key": "username",
 							"value": "jacksparrow"
 						},
 						{
@@ -67,8 +67,8 @@
 							"value": "USD"
 						},
 						{
-							"key": "initialBalance",
-							"value": "1"
+							"key": "balance",
+							"value": "10"
 						}
 					]
 				}
@@ -81,22 +81,22 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/account?userName=jacksparrow&initialBalance=120&currencyCode=TRY",
+					"raw": "http://localhost:8081/account?username=jacksparrow&balance=120&currencyCode=TRY",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"account"
 					],
 					"query": [
 						{
-							"key": "userName",
+							"key": "username",
 							"value": "jacksparrow"
 						},
 						{
-							"key": "initialBalance",
+							"key": "balance",
 							"value": "120"
 						},
 						{
@@ -114,16 +114,24 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/account/jacksparrow/USD",
+					"raw": "http://localhost:8081/account?username=jacksparrow&currencyCode=USD",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
-						"account",
-						"jacksparrow",
-						"USD"
+						"account"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "jacksparrow"
+						},
+						{
+							"key": "currencyCode",
+							"value": "USD"
+						}
 					]
 				}
 			},
@@ -135,16 +143,56 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/account/jacksparrow/TRY",
+					"raw": "http://localhost:8081/account?username=jacksparrow&currencyCode=TRY",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
+					"path": [
+						"account"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "jacksparrow"
+						},
+						{
+							"key": "currencyCode",
+							"value": "TRY"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Account List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"username\":\"jacksparrow\",\n        \"currencyCode\": \"USD\"\n    },\n    {\n        \"username\":\"jacksparrow\",\n        \"currencyCode\": \"TRY\"\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/account/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
 					"path": [
 						"account",
-						"jacksparrow",
-						"TRY"
+						"list"
 					]
 				}
 			},
@@ -156,19 +204,19 @@
 				"method": "PATCH",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/transaction/withdraw?userName=jacksparrow&currencyCode=USD&amount=1",
+					"raw": "http://localhost:8082/transaction/withdraw?username=jacksparrow&currencyCode=USD&amount=1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8082",
 					"path": [
 						"transaction",
 						"withdraw"
 					],
 					"query": [
 						{
-							"key": "userName",
+							"key": "username",
 							"value": "jacksparrow"
 						},
 						{
@@ -190,19 +238,19 @@
 				"method": "PATCH",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/transaction/deposit?userName=jacksparrow&currencyCode=USD&amount=10",
+					"raw": "http://localhost:8082/transaction/deposit?username=jacksparrow&currencyCode=USD&amount=10",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8082",
 					"path": [
 						"transaction",
 						"deposit"
 					],
 					"query": [
 						{
-							"key": "userName",
+							"key": "username",
 							"value": "jacksparrow"
 						},
 						{
@@ -224,19 +272,19 @@
 				"method": "PATCH",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/transaction/withdraw?userName=jacksparrow&currencyCode=TRY&amount=15",
+					"raw": "http://localhost:8082/transaction/withdraw?username=jacksparrow&currencyCode=TRY&amount=15",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8082",
 					"path": [
 						"transaction",
 						"withdraw"
 					],
 					"query": [
 						{
-							"key": "userName",
+							"key": "username",
 							"value": "jacksparrow"
 						},
 						{
@@ -258,19 +306,19 @@
 				"method": "PATCH",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/transaction/deposit?userName=jacksparrow&currencyCode=TRY&amount=100",
+					"raw": "http://localhost:8082/transaction/deposit?username=jacksparrow&currencyCode=TRY&amount=100",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8082",
 					"path": [
 						"transaction",
 						"deposit"
 					],
 					"query": [
 						{
-							"key": "userName",
+							"key": "username",
 							"value": "jacksparrow"
 						},
 						{
@@ -292,19 +340,19 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/transaction/send?senderUserName=jacksparrow&senderCurrencyCode=TRY&receiverUserName=jacksparrow&receiverCurrencyCode=USD&amount=15",
+					"raw": "http://localhost:8082/transaction/send?senderUsername=jacksparrow&senderCurrencyCode=TRY&receiverUsername=jacksparrow&receiverCurrencyCode=USD&amount=15",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8082",
 					"path": [
 						"transaction",
 						"send"
 					],
 					"query": [
 						{
-							"key": "senderUserName",
+							"key": "senderUsername",
 							"value": "jacksparrow"
 						},
 						{
@@ -312,7 +360,7 @@
 							"value": "TRY"
 						},
 						{
-							"key": "receiverUserName",
+							"key": "receiverUsername",
 							"value": "jacksparrow"
 						},
 						{
@@ -334,19 +382,19 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/transaction/send?senderUserName=jacksparrow&senderCurrencyCode=USD&receiverUserName=jacksparrow&receiverCurrencyCode=TRY&amount=1",
+					"raw": "http://localhost:8082/transaction/send?senderUsername=jacksparrow&senderCurrencyCode=USD&receiverUsername=jacksparrow&receiverCurrencyCode=TRY&amount=1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8082",
 					"path": [
 						"transaction",
 						"send"
 					],
 					"query": [
 						{
-							"key": "senderUserName",
+							"key": "senderUsername",
 							"value": "jacksparrow"
 						},
 						{
@@ -354,7 +402,7 @@
 							"value": "USD"
 						},
 						{
-							"key": "receiverUserName",
+							"key": "receiverUsername",
 							"value": "jacksparrow"
 						},
 						{
