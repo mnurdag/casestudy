@@ -35,6 +35,12 @@ public class RestExceptionAdvice extends ResponseEntityExceptionHandler {
             return new ResponseEntity<Object>(ex.getCompleteMessage(), new HttpHeaders(), HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler({ KafkaException.class })
+    public ResponseEntity<Object> handleApiException(
+            KafkaException ex, WebRequest request) {
+            return new ResponseEntity<Object>(ex.getCompleteMessage(), new HttpHeaders(), HttpStatus.BAD_REQUEST);
+    }
+
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatusCode status, WebRequest request) {
         Map<String, String> errors = new HashMap<>();

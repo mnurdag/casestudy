@@ -2,6 +2,7 @@ package com.zad.accountservice.common;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.zad.accountservice.exception.KafkaException;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -24,7 +25,11 @@ public class KafkaSender {
             sendMessage(topic, key, message);
         } catch (JsonProcessingException e) {
             log.info("Can't write object as text!!! Message: {}", e.getMessage());
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            String message = "Error while sending Kafka message!!! Message: ";
+            String detailedMessage = e.getMessage();
+            log.info(message + "{}", detailedMessage);
+            throw new KafkaException(message, detailedMessage);
         }
     }
 
